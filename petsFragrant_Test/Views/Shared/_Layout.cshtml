@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - petsFragrant_Test</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">petsFragrant_Test</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="red" class="svg-icon" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 24C21.8 24 19.9167 23.2167 18.35 21.65C16.7833 20.0833 16 18.2 16 16C16 13.8 16.7833 11.9167 18.35 10.35C19.9167 8.78333 21.8 8 24 8C26.2 8 28.0833 8.78333 29.65 10.35C31.2167 11.9167 32 13.8 32 16C32 18.2 31.2167 20.0833 29.65 21.65C28.0833 23.2167 26.2 24 24 24ZM8 40V34.4C8 33.2667 8.292 32.2247 8.876 31.274C9.46 30.3233 10.2347 29.5987 11.2 29.1C13.2667 28.0667 15.3667 27.2913 17.5 26.774C19.6333 26.2567 21.8 25.9987 24 26C26.2 26 28.3667 26.2587 30.5 26.776C32.6333 27.2933 34.7333 28.068 36.8 29.1C37.7667 29.6 38.542 30.3253 39.126 31.276C39.71 32.2267 40.0013 33.268 40 34.4V40H8Z" fill="#7B7B7B" />
+                            </svg>
+
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - petsFragrant_Test - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        // 使用JavaScript动态更改SVG的颜色
+        const svgElement = document.querySelector('.svg-icon');
+        svgElement.style.fill = 'blue';
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

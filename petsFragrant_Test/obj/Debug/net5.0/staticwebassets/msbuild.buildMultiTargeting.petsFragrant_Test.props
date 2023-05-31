@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\petsFragrant_Test.props" />
+</Project>

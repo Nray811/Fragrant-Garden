@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - 寵物香園</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css"/>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+    @await RenderSectionAsync("topJS", required: false)
+    @await RenderSectionAsync("topCSS", required: false)
+</head>
+<body>
+
+        <partial name="_NavbarPartial" />
+
+
+    <main role="main" class="p-3">
+        <div class="container">
+            @RenderBody()
+            <p class=" m-1 btt shadow">
+                <a href="#"><i class="material-icons">arrow_upward</i></a>
+            </p>
+        </div>
+
+    </main>
+
+    
+    
+    <div class="footer-clean d-flex flex-column">
+        <footer>
+            <partial name="_FooterPartial" />
+        </footer>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    @await RenderSectionAsync("endJS", required: false)
+    @await RenderSectionAsync("endCSS", required: false)
+</body>
+</html>

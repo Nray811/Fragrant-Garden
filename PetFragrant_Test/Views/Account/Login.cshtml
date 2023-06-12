@@ -1,0 +1,68 @@
+﻿@model PetFragrant_Test.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="row d-flex justify-content-center">
+    
+    
+    <div class="col-md-4 login d-flex justify-content-center flex-column ">
+        <h3 class="text-center m-2">登入</h3>
+        
+        <form asp-action="Login" class="m-4 p-4 ">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserEmail" class="control-label"></label>
+                <input asp-for="UserEmail" class="form-control" placeholder="請輸入電子信箱" />
+                <span asp-validation-for="UserEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" placeholder="請輸入密碼" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center mt-4">
+                <input type="submit" value="登入" class="btn login-btn" />
+            </div>
+            <div class="mt-2 d-flex justify-content-center">
+                <input type="button" value="google登入" class="btn btn-danger m-2" />
+                <input type="button" value="facebook登入" class="btn btn-primary m-2" />
+
+            </div>
+        </form>
+    </div>
+    <div class="mt-2 text-center">
+        <a asp-action="Index" asp-controller="Home">回首頁</a>
+    </div>
+</div>
+
+<div class="bg"></div>
+
+@section topCSS{
+    <style>
+        
+        main{
+            position:relative;
+            background: #E1DBC5;
+        }
+
+        .bg {
+            position:absolute;
+            /*height:50vh;*/
+            width:100%; 
+            /*top:auto;*/
+            background: #CCB79E;
+            z-index:10;
+        }
+        .login {
+            background: #F5F5F5;
+            width: 40%;
+            height: 60vh;
+            border-radius: 12px;
+        }
+        .login-btn{
+            background-color: #807967;
+            color:white;
+        }
+    </style>
+}

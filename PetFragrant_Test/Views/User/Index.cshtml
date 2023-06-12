@@ -1,0 +1,148 @@
+﻿
+@{
+    ViewData["Title"] = "使用者資訊";
+}
+
+<h1><center>使用者資訊</center></h1>
+
+    <div class="row bg-white h-50 p-4 rounded-2 shadow-sm   ">
+        <div class="col-12 col-md-4 d-flex flex-column align-items-center">
+            <img src="https://picsum.photos/200/200/?random=10" class="rounded-circle">
+        <h4>@User.Identity.Name</h4>
+            <a href="#">編輯</a>
+        </div>
+        <div class="col-12 col-md-6">
+            <table class="table table-hover table-borderless">
+                <tbody class="">
+                    <tr>
+                        <td><h5>姓名</h5></td>
+                    <td>@ViewBag.User.Name</td>
+                        <td><a href="#">編輯</a></td>
+                    </tr>
+                    <tr>
+                        <td><h5>E-mail</h5></td>
+                    <td>@ViewBag.User.Email</td>
+                        <td><a href="#">編輯</a></td>
+                    </tr>
+                    <tr>
+                        <td><h5>手機號碼</h5></td>
+                        <td>@ViewBag.User.PhoneNo</td>
+                        <td><a href="#">編輯</a></td>
+                    </tr>
+                    <tr>
+                        <td><h5>地址</h5></td>
+                        <td>@ViewBag.User.IsAdmin</td>
+                        <td><a href="#">編輯</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row bg-white h-100 mt-4 p-2 shadow-sm rounded-2">
+        <div class="grid-container ">
+            <a href="#" class="grid-item">
+                <div class="img">
+                    <div class="circle rounded-circle  d-flex justify-content-center align-items-center" style="background-color:#E0B547;width: 100px; height: 100px;">
+                        <i class="icon ion-heart display-6 text-white "></i>
+                    </div>
+                    <h5 class="fw-bold">按讚好物</h5>
+                </div>
+            </a>
+            <a href="#" class="grid-item">
+                <div class="img">
+                    <div class="circle rounded-circle  d-flex justify-content-center align-items-center" style="background-color:#E0B547;width: 100px; height: 100px;">
+                        <i class="icon ion-heart display-6 text-white "></i>
+                    </div>
+                    <h5 class="fw-bold">按讚好物</h5>
+                </div>
+            </a>
+            <a href="#" class="grid-item">
+                <div class="img">
+                    <div class="circle rounded-circle  d-flex justify-content-center align-items-center" style="background-color:#E0B547;width: 100px; height: 100px;">
+                        <i class="icon ion-heart display-6 text-white "></i>
+                    </div>
+                    <h5 class="fw-bold">按讚好物</h5>
+                </div>
+            </a>
+            <a href="#" class="grid-item">
+                <div class="img">
+                    <div class="circle rounded-circle  d-flex justify-content-center align-items-center" style="background-color:#E0B547;width: 100px; height: 100px;">
+                        <i class="icon ion-heart display-6 text-white "></i>
+                    </div>
+                    <h5 class="fw-bold">按讚好物</h5>
+                </div>
+            </a>
+            <a href="#" class="grid-item">
+                <div class="img">
+                    <div class="circle rounded-circle  d-flex justify-content-center align-items-center" style="background-color:#E0B547;width: 100px; height: 100px;">
+                        <i class="icon ion-heart display-6 text-white "></i>
+                    </div>
+                    <h5 class="fw-bold">按讚好物</h5>
+                </div>
+            </a>
+            <a href="#" class="grid-item">
+                <div class="img">
+                    <div class="circle rounded-circle  d-flex justify-content-center align-items-center" style="background-color:#E0B547;width: 100px; height: 100px;">
+                        <i class="icon ion-heart display-6 text-white "></i>
+                    </div>
+                    <h5 class="fw-bold">按讚好物</h5>
+                </div>
+            </a>
+            <a href="#" class="grid-item">
+                <div class="img">
+                    <div class="circle rounded-circle  d-flex justify-content-center align-items-center" style="background-color:#E0B547;width: 100px; height: 100px;">
+                        <i class="icon ion-heart display-6 text-white "></i>
+                    </div>
+                    <h5 class="fw-bold">按讚好物</h5>
+                </div>
+            </a>
+            <a href="#" class="grid-item">
+                <div class="img">
+                    <div class="circle rounded-circle  d-flex justify-content-center align-items-center" style="background-color:#E0B547;width: 100px; height: 100px;">
+                        <i class="icon ion-heart display-6 text-white "></i>
+                    </div>
+                    <h5 class="fw-bold">按讚好物</h5>
+                </div>
+            </a>
+
+
+        </div>
+    </div>
+
+
+@section topCSS{
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            height:100%;
+        }
+
+        @@media screen and (min-width : 1024px ) {
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1px;
+            }
+        }
+
+
+        .grid-item {
+            /*background-color: rgb(255, 255, 255);*/
+            height: 150px;
+            border: none;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #3a3946;
+        }
+
+            .grid-item:hover {
+                color: #dd8a24;
+            }
+    </style>
+}    

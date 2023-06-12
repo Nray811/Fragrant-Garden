@@ -1,0 +1,33 @@
+﻿@model IEnumerable<petsFragrant.Models.Product>
+
+@{
+    ViewData["Title"] = "ProductList";
+}
+
+<h1>所有產品</h1>
+
+<div class="d-flex flex-wrap">
+    @foreach (var item in Model)
+    {
+        <a asp-action="ProductDetail" asp-route-id="@item.ProdcutId" class="card col-2 m-3">
+            <div>
+                <img src="https://picsum.photos/300/300?random=1" class="w-100 mt-1">
+                @*<img src="~/images/@(item.ProdcutId)/1.png" class="w-100 mt-1">*@
+                <div class="card-body d-flex flex-column align-items-center">
+                    <h6 class="card-title w-100" style="color:midnightblue">@item.ProductName</h6>
+                    <p><del style="color:gray;">$@(item.Price * (decimal)(0.9))</del></p>
+                    <h6 class="card-text d-flex  align-items-center justify-content-between  w-100" style="color:darkred;">$@item.Price <p><i class="material-icons text-secondary">favorite_border</i></p></h6>
+                </div>
+            </div>
+        </a>
+
+    }
+</div>
+
+@section topCSS{
+    <style>
+        a{
+            text-decoration: none;
+        }
+    </style>
+}

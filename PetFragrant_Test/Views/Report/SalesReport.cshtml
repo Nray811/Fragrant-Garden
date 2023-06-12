@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "SalesReport";
+}
+
+<h1>@(DateTime.Now.Year)年銷售報表</h1>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <h2>僅限登入通過身份驗證使用者觀看</h2>
+    <h2>您的帳號已通過驗證:@User.Identity.Name</h2>
+}

@@ -1,0 +1,94 @@
+﻿@model petsFragrant.Models.Product
+
+@{
+    ViewData["Title"] = "AddProduct";
+}
+
+<h1>AddProduct</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddProduct">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProdcutId" class="control-label"></label>
+                <input asp-for="ProdcutId" class="form-control" />
+                <span asp-validation-for="ProdcutId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoriesID" class="control-label"></label>
+                <select asp-for="CategoriesID" class ="form-control" asp-items="ViewBag.CategoriesID"></select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">規格</label>
+                <div class="spec" id="spec">
+                    <button type="button" class="btn btn-secondary m-2" id="add">
+                        新增規格+
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label"></label>
+                <textarea asp-for="ProductName" class="form-control"></textarea>
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductDescription" class="control-label"></label>
+                <textarea asp-for="ProductDescription" class="form-control"></textarea>
+                <span asp-validation-for="ProductDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inventory" class="control-label"></label>
+                <input asp-for="Inventory" class="form-control" />
+                <span asp-validation-for="Inventory" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section endJS{
+    <script>
+        var spec = document.getElementById("spec");
+        var add = document.getElementById("add");
+
+        spec.addEventListener("click", function (event) {
+            if (event.target.classList.contains("btn-close")) {
+                var div = event.target.parentNode;
+                div.remove();
+            }
+        });
+
+        add.addEventListener("click", function () {
+            var div = document.createElement("div");
+            div.setAttribute("class", "bg-warning btn m-2 p-0");
+            var new_spec = document.createElement("input");
+            new_spec.setAttribute("value", "規格");
+            new_spec.setAttribute("name", "SpecName");
+            new_spec.setAttribute("type", "text");
+            new_spec.setAttribute("class", "position-relative btn btn-warning");
+            inner_input = document.createElement("input");
+            inner_input.setAttribute("type", "button");
+            inner_input.setAttribute("class", "btn-close");
+            inner_input.setAttribute("aria-label", "Close");
+
+            div.appendChild(new_spec);
+            div.appendChild(inner_input);
+            spec.appendChild(div);
+        });
+    </script>
+}
+

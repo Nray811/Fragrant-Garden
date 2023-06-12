@@ -1,0 +1,88 @@
+﻿<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top ">
+    <div class="container-fluid  m-0">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarTogglerDemo03">
+            <div class="icon col-1">
+                <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/icon/dog.png" alt="" width="80%"></a>
+            </div>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active fw-bold" aria-current="page" asp-area="" asp-controller="Home" asp-action="Index">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="About" asp-controller="Home">關於我們 </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="JoinMe" asp-controller="Home">加入我們 </a>
+                </li>
+            </ul>
+
+            <div class="d-flex" style="width:28%;">
+
+                <a class="btn nav-btn d-flex flex-column align-items-center m-0 p-0">
+                    <svg width="40%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M37 8H11C9.89543 8 9 8.89543 9 10V42C9 43.1046 9.89543 44 11 44H37C38.1046 44 39 43.1046 39 42V10C39 8.89543 38.1046 8 37 8Z" stroke="#7B7B7B" stroke-width="4" stroke-linejoin="round" />
+                        <path d="M18 4V10M30 4V10M16 19H32M16 27H28M16 35H24" stroke="#7B7B7B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                    我的訂單
+                </a>
+                <a class="btn nav-btn d-flex flex-column align-items-center m-0 p-0">
+                    <svg width="40%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M34 36C31.78 36 30 37.78 30 40C30 41.0609 30.4214 42.0783 31.1716 42.8284C31.9217 43.5786 32.9391 44 34 44C35.0609 44 36.0783 43.5786 36.8284 42.8284C37.5786 42.0783 38 41.0609 38 40C38 38.9391 37.5786 37.9217 36.8284 37.1716C36.0783 36.4214 35.0609 36 34 36ZM2 4V8H6L13.2 23.18L10.48 28.08C10.18 28.64 10 29.3 10 30C10 31.0609 10.4214 32.0783 11.1716 32.8284C11.9217 33.5786 12.9391 34 14 34H38V30H14.84C14.7074 30 14.5802 29.9473 14.4864 29.8536C14.3927 29.7598 14.34 29.6326 14.34 29.5C14.34 29.4 14.36 29.32 14.4 29.26L16.2 26H31.1C32.6 26 33.92 25.16 34.6 23.94L41.76 11C41.9 10.68 42 10.34 42 10C42 9.46957 41.7893 8.96086 41.4142 8.58579C41.0391 8.21071 40.5304 8 40 8H10.42L8.54 4M14 36C11.78 36 10 37.78 10 40C10 41.0609 10.4214 42.0783 11.1716 42.8284C11.9217 43.5786 12.9391 44 14 44C15.0609 44 16.0783 43.5786 16.8284 42.8284C17.5786 42.0783 18 41.0609 18 40C18 38.9391 17.5786 37.9217 16.8284 37.1716C16.0783 36.4214 15.0609 36 14 36Z" fill="#7B7B7B" />
+                    </svg>
+                    購物車
+                </a>
+                <a class="btn d-flex flex-column align-items-center m-0 p-0">
+                    <svg width="40%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="nav-btn" d="M24 42.7L21.1 40.06C10.8 30.72 4 24.54 4 17C4 10.82 8.84 6 15 6C18.48 6 21.82 7.62 24 10.16C26.18 7.62 29.52 6 33 6C39.16 6 44 10.82 44 17C44 24.54 37.2 30.72 26.9 40.06L24 42.7Z" fill="#7B7B7B" />
+                    </svg>
+
+                    按讚好物
+                </a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @*已登入*@
+                    <a class="btn nav-btn d-flex flex-column align-items-center m-0 p-0" asp-action="Index" asp-controller="User">
+                        <svg width="40%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 24C21.8 24 19.9167 23.2167 18.35 21.65C16.7833 20.0833 16 18.2 16 16C16 13.8 16.7833 11.9167 18.35 10.35C19.9167 8.78333 21.8 8 24 8C26.2 8 28.0833 8.78333 29.65 10.35C31.2167 11.9167 32 13.8 32 16C32 18.2 31.2167 20.0833 29.65 21.65C28.0833 23.2167 26.2 24 24 24ZM8 40V34.4C8 33.2667 8.292 32.2247 8.876 31.274C9.46 30.3233 10.2347 29.5987 11.2 29.1C13.2667 28.0667 15.3667 27.2913 17.5 26.774C19.6333 26.2567 21.8 25.9987 24 26C26.2 26 28.3667 26.2587 30.5 26.776C32.6333 27.2933 34.7333 28.068 36.8 29.1C37.7667 29.6 38.542 30.3253 39.126 31.276C39.71 32.2267 40.0013 33.268 40 34.4V40H8Z" fill="#7B7B7B" />
+                        </svg>
+                        @User.Identity.Name
+                    </a>
+                    <a class="btn nav-btn d-flex flex-column align-items-center m-0 p-0" href="@Url.Action("SignOut","Account")">
+                        <svg width="40%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 48V42.6667H42.6667V5.33333H24V0H42.6667C44.1333 0 45.3893 0.522667 46.4347 1.568C47.48 2.61333 48.0018 3.86844 48 5.33333V42.6667C48 44.1333 47.4773 45.3893 46.432 46.4347C45.3867 47.48 44.1315 48.0018 42.6667 48H24ZM18.6667 37.3333L15 33.4667L21.8 26.6667H0V21.3333H21.8L15 14.5333L18.6667 10.6667L32 24L18.6667 37.3333Z" fill="#7B7B7B" />
+                        </svg>
+                        登出
+                    </a>
+                }
+                else
+                {
+                    @*未登入*@
+                    <a class="btn nav-btn d-flex flex-column align-items-center m-0 p-0" href="@Url.Action("Login", "Account")">
+                        <svg width="40%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 24C21.8 24 19.9167 23.2167 18.35 21.65C16.7833 20.0833 16 18.2 16 16C16 13.8 16.7833 11.9167 18.35 10.35C19.9167 8.78333 21.8 8 24 8C26.2 8 28.0833 8.78333 29.65 10.35C31.2167 11.9167 32 13.8 32 16C32 18.2 31.2167 20.0833 29.65 21.65C28.0833 23.2167 26.2 24 24 24ZM8 40V34.4C8 33.2667 8.292 32.2247 8.876 31.274C9.46 30.3233 10.2347 29.5987 11.2 29.1C13.2667 28.0667 15.3667 27.2913 17.5 26.774C19.6333 26.2567 21.8 25.9987 24 26C26.2 26 28.3667 26.2587 30.5 26.776C32.6333 27.2933 34.7333 28.068 36.8 29.1C37.7667 29.6 38.542 30.3253 39.126 31.276C39.71 32.2267 40.0013 33.268 40 34.4V40H8Z" fill="#7B7B7B" />
+                        </svg>
+                        登入
+                    </a>
+                    <a class="btn nav-btn d-flex flex-column align-items-center m-0 p-0" href="@Url.Action("Register", "Account")">
+                        <svg width="40%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 48V42.6667H42.6667V5.33333H24V0H42.6667C44.1333 0 45.3893 0.522667 46.4347 1.568C47.48 2.61333 48.0018 3.86844 48 5.33333V42.6667C48 44.1333 47.4773 45.3893 46.432 46.4347C45.3867 47.48 44.1315 48.0018 42.6667 48H24ZM18.6667 37.3333L15 33.4667L21.8 26.6667H0V21.3333H21.8L15 14.5333L18.6667 10.6667L32 24L18.6667 37.3333Z" fill="#7B7B7B" />
+                        </svg>
+
+                        註冊
+                    </a>
+                }
+
+            </div>
+        </div>
+       
+    </div>
+</nav>
+
+
+                        

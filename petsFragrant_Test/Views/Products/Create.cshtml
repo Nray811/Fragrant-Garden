@@ -10,7 +10,12 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
+
         <form asp-action="Create">
+            <dib>
+                <input type="file" name="upfile" />
+                <input type="submit" name="upload" value="上傳" />
+            </dib>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="ProdcutId" class="control-label"></label>

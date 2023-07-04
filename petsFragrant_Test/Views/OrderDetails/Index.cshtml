@@ -18,6 +18,8 @@
             <th>
                 @Html.DisplayNameFor(model => model.Product)
             </th>
+            <th>@Html.DisplayNameFor(model => model.QtDiscount)</th>
+            <th>@Html.DisplayNameFor(model => model.Amount)</th>
             <th></th>
         </tr>
     </thead>
@@ -30,6 +32,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Product.ProdcutId)
             </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.QtDiscount)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
